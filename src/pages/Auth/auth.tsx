@@ -21,12 +21,14 @@ const Auth = () => {
 
     //se existir token, set novo token
     if(token) {
-      setToken(token.replace('token=', 'Bearer '))
+      setTimeout(() => {
+        setToken(token.replace('token=', 'Bearer '))
+      }, 300)
     }
   }, [token])
 
   useEffect(() => {
-    if(getUser.state === 'hasValue') {
+    if(getUser.state === 'hasValue' && getUser.contents !== undefined) {
       setUser({
         name: getUser.contents?.display_name,
         image: getUser.contents?.images?.[0]?.url

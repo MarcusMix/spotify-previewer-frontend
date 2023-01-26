@@ -8,8 +8,11 @@ const Login = () => {
 
   const user = useRecoilValue(atomUser)
 
+  //se tiver logado, sera redirecionado para a home
   useEffect(() => {
-    navigate('/home')
+    if(user) {
+      navigate('/home')
+    }
   }, [user])
 
   return (

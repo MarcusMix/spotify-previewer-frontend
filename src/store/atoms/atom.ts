@@ -6,7 +6,8 @@ import { localStorageEffect } from '../../utils/localStorageEffect'
 // valor default vazio
 export const atomToken = atom<string>({
   key: 'atomToken',
-  default: ''
+  default: '',
+  effects: [localStorageEffect("atomToken")]
 })
 
 export const atomUser = atom<TUser>({
