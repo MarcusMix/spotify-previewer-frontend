@@ -42,14 +42,16 @@ const Auth = () => {
     }
   }, [getUser.state, getUser.contents])
 
-  return <div>{user && (
+  return (
     <div>
-      <h1>{user.name}</h1>
-      <img src={user.image} alt="" />
+      {user && (
+        <div>
+          <h1>{user.name}</h1>
+          <img src={user.image} alt="" />
+        </div>
+      )}
     </div>
-
-  )}</div>
-
+  )
 }
 
 export default Auth
